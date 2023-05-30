@@ -5,14 +5,67 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carrousel JS</title>
+    <!-- Normalize css -->
     <link rel="stylesheet" href="css/normalize.css">
+    <!-- Style css -->
     <link rel="stylesheet" href="css/style.css">
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/c7ebc94ea5.js" crossorigin="anonymous"></script>
 </head>
 <body>
     
-    <header></header>
+    <header>
+        <h1>Carrousel JS</h1>
+    </header>
 
-    <main></main>
+    <section class="toolbox-wrapper">
+        <a class="btn" role="button" href="#" id="toolbox-toggle">Toolbox</a>
+    </section>
+    
+    <section class="toolbox-navbar">    
+        <nav class="toolbox">
+            <div class="hidden">
+                <ul>
+                    <li>
+                        <button class="btn" id="slider-previous" title="image précédente">
+                            <i class="fa-solid fa-backward-step"></i>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="btn" id="slider-toggle" title="démarrer">
+                            <i class="fa-solid fa-play"></i>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="btn" id="slider-next" title="image suivante">
+                            <i class="fa-solid fa-forward-step"></i>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="btn" id="slider-random" title="image random">
+                            <i class="fa-solid fa-shuffle"></i>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="btn" id="slider-stop" title="image stop">
+                            <i class="fa-solid fa-stop"></i>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </nav>    
+    </section>
+
+    <main class="container">
+        <div class="card">
+        
+            <figure id="slider" class="slider">
+                <img src="" alt="Photo du carrousel">
+                <figcaption></figcaption>
+            </figure>
+        
+        </div>
+    </main>
 
     <script src="js/utils.js"></script>
     <script src="js/main.js"></script>
