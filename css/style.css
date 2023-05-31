@@ -28,35 +28,53 @@ img {
 header {
     padding: 1em;
 }
-
 header h1 {
     margin: 0;
     text-align: center;
 }
 
 .toolbox-wrapper,
-.toolbox-navbar,
-.toolbox .hidden {
+.toolbox-navbar {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 2em;
 }
-
+.toolbox {
+    position: relative;
+}
 .toolbox ul {
     display: flex;
     align-items: center;
     list-style: none;
     padding: 0;
 }
-
 .toolbox ul li + li {
     margin-left: 1.5em;
 }
+.toolbox #box {
+    border: 1px solid rgba(255,255,255, .3);
+    padding: 1em;
+}
+.toolbox #box {
+  -webkit-transform: scale(0.5);
+  -ms-transform: scale(0);
+  transform: scale(0.5);
+  opacity: 0;
+  -webkit-transition: all .3s;
+  -ms-transition: all .3s;
+  transition: all .3s;
+}
+.toolbox #box.openbox {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  opacity: 1;
+}
 
-/* .hidden {
+.hidden {
     visibility: hidden;
-} */
+}
 
 a.btn {
     text-decoration: none;
@@ -67,9 +85,10 @@ a.btn {
     text-transform: uppercase;
     text-align: center;
     letter-spacing: 0.05em;
-    border: 1px solid rgba(255,255,255, 0.5);;
+    border: 1px solid rgba(255,255,255, 0.5);
     overflow: hidden;
     background: transparent;
+    color: #FFF;
     -moz-border-radius: 0.4rem;
     -webkit-border-radius: 0.4rem;
     border-radius: 0.4rem;
@@ -81,14 +100,12 @@ a.btn {
     -webkit-box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3), 0px 3px 7px rgba(0, 0, 0, 0.7);
     box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3), 0px 3px 7px rgba(0, 0, 0, 0.7);
 }
-
 .btn:hover {
     color: white;
     -moz-box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.2), 0px 1px 0px transparent;
     -webkit-box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.2), 0px 1px 0px transparent;
     box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.2), 0px 1px 0px transparent;
 }
-
 .btn:before {
     content: '';
     position: absolute;
@@ -96,19 +113,18 @@ a.btn {
     height: 100%;
     top: 0;
     left: -100%;
-    background: #595381;
+    background: #242038;
     z-index: -1;
     -moz-transition: all 0.3s ease-in-out;
     -o-transition: all 0.3s ease-in-out;
     -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
 }
-
 .btn:hover:before {
-    left: 50%;
+    /* left: 50%; */
+    left: 0%;
 }
-
-.btn:after {
+/* .btn:after {
     content: '';
     position: absolute;
     width: 100%;
@@ -122,7 +138,6 @@ a.btn {
     -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
 }
-
 .btn:hover:after {
     right: 50%;
-}
+} */

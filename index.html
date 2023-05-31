@@ -19,12 +19,12 @@
     </header>
 
     <section class="toolbox-wrapper">
-        <a class="btn" role="button" href="#" id="toolbox-toggle">Toolbox</a>
+        <a class="btn" role="button" href="#" id="toolbox-toggle"><i class="fa fa-arrow-right"></i>&nbsp;Toolbox</a>
     </section>
     
     <section class="toolbox-navbar">    
         <nav class="toolbox">
-            <div class="hidden">
+            <div id="box">
                 <ul>
                     <li>
                         <button class="btn" id="slider-previous" title="image précédente">
@@ -32,7 +32,7 @@
                         </button>
                     </li>
                     <li>
-                        <button class="btn" id="slider-toggle" title="démarrer">
+                        <button class="btn" id="slider-play" title="démarrer">
                             <i class="fa-solid fa-play"></i>
                         </button>
                     </li>
@@ -60,6 +60,7 @@
         <div class="card">
         
             <figure id="slider" class="slider">
+                <span></span>
                 <img src="" alt="Photo du carrousel">
                 <figcaption></figcaption>
             </figure>
@@ -68,6 +69,7 @@
     </main>
 
     <script src="js/utils.js"></script>
+    <script src="js/carrousel.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
