@@ -98,17 +98,28 @@ function sliderNext() {
     updateSlider();
 }
 
+function sliderStop() {
+    let icon = document.querySelector('#slider-play svg');
+    state.index = 0;
+
+    window.clearInterval(state.timer);
+    state.timer = null;
+    icon.classList.toggle('fa-play');
+
+    updateSlider();
+}
+
 function initSlider() {
     state = {};
     state.index = 0;
     state.timer = null;
 
-    createEventHandler('#slider-next', 'click', sliderNext);
-    // createEventHandler('#slider-previous', 'click', sliderPrevious);
-    createEventHandler('#slider-play', 'click', sliderPlay);
     createEventHandler('#toolbox-toggle', 'click', toggleToolBox);
+    createEventHandler('#slider-play', 'click', sliderPlay);
+    createEventHandler('#slider-next', 'click', sliderNext);
+    createEventHandler('#slider-stop', 'click', sliderStop);
+    // createEventHandler('#slider-previous', 'click', sliderPrevious);
     // createEventHandler('#slider-random', 'click', sliderRandom);
-    // createEventHandler('#slider-stop', 'click', sliderStop);
     // createEventHandler('html', 'keyup', sliderKeyUp);
 
     updateSlider();
