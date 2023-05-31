@@ -73,6 +73,16 @@ function toggleToolBox() {
     document.querySelector('.toolbox div').classList.toggle('openbox');
 }
 
+function sliderPrevious() {
+    state.index--;
+
+    if (state.index < 0) {
+        state.index = slides.length - 1;
+    }
+
+    updateSlider();
+}
+
 function sliderPlay() {
     let icon = document.querySelector('#slider-play svg');
     icon.classList.toggle('fa-play');
@@ -81,10 +91,12 @@ function sliderPlay() {
     if (state.timer == null) {
         state.timer = window.setInterval(sliderNext, 2000);
         this.title = 'Carrousel pause';
+        // this['title'] = 'Carrousel pause';
     } else {
         window.clearInterval(state.timer);
         state.timer = null;
         this.title = 'Carrousel start';
+        // this['title'] = 'Carrousel start';
     }
 }
 
@@ -109,18 +121,47 @@ function sliderStop() {
     updateSlider();
 }
 
+function sliderRandom() {
+    let index;
+
+    do {
+        index = getRandomInteger(0, slides.length - 1);
+    }
+    while (index === state.index);
+
+    state.index = index;
+
+    updateSlider();
+}
+
+function sliderKeyUp(event) {
+    switch (event.keyCode) {
+        case KEY_RIGHT:
+            sliderNext();
+            break;
+
+        case KEY_LEFT:
+            sliderPrevious();
+            break;
+
+        case KEY_BACKSPACE:
+            sliderPlay();
+            break;
+    }
+}
+
 function initSlider() {
     state = {};
     state.index = 0;
     state.timer = null;
 
     createEventHandler('#toolbox-toggle', 'click', toggleToolBox);
+    createEventHandler('#slider-previous', 'click', sliderPrevious);
     createEventHandler('#slider-play', 'click', sliderPlay);
     createEventHandler('#slider-next', 'click', sliderNext);
     createEventHandler('#slider-stop', 'click', sliderStop);
-    // createEventHandler('#slider-previous', 'click', sliderPrevious);
-    // createEventHandler('#slider-random', 'click', sliderRandom);
-    // createEventHandler('html', 'keyup', sliderKeyUp);
+    createEventHandler('#slider-random', 'click', sliderRandom);
+    createEventHandler('html', 'keyup', sliderKeyUp);
 
     updateSlider();
 }
