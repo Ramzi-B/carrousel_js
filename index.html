@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carrousel JS</title>
+    <title>Carrousel</title>
     <!-- Normalize css -->
     <link rel="stylesheet" href="css/normalize.css">
     <!-- Style css -->
@@ -15,54 +15,58 @@
 <body>
     
     <header>
-        <h1>Carrousel JS</h1>
+        <h1>Carrousel</h1>
     </header>
 
-    <section class="toolbox-wrapper">
-        <a class="btn" role="button" href="#" id="toolbox-toggle"><i class="fa fa-arrow-right"></i>&nbsp;Toolbox</a>
-    </section>
     
-    <section class="toolbox-navbar">    
-        <nav class="toolbox">
-            <div id="box">
-                <ul>
-                    <li>
-                        <button class="btn" id="slider-previous" title="image précédente">
-                            <i class="fa-solid fa-backward-step"></i>
-                        </button>
-                    </li>
-                    <li>
-                        <button class="btn" id="slider-play" title="démarrer">
-                            <i class="fa-solid fa-play"></i>
-                        </button>
-                    </li>
-                    <li>
-                        <button class="btn" id="slider-next" title="image suivante">
-                            <i class="fa-solid fa-forward-step"></i>
-                        </button>
-                    </li>
-                    <li>
-                        <button class="btn" id="slider-random" title="image random">
-                            <i class="fa-solid fa-shuffle"></i>
-                        </button>
-                    </li>
-                    <li>
-                        <button class="btn" id="slider-stop" title="image stop">
-                            <i class="fa-solid fa-stop"></i>
-                        </button>
-                    </li>
-                </ul>
-            </div>
-        </nav>    
-    </section>
-
+    
     <main class="container">
+
+        <section class="toolbox-wrapper">
+            <div class="toolbox-trigger">
+                <a class="btn" role="button" href="#" id="toolbox-toggle"><i class="fa fa-arrow-right"></i>&nbsp;Toolbox</a>
+            </div>
+            <div class="toolbox">    
+                <nav class="toolbox__navbar">
+                    <div id="toolbox__navbar__buttons">
+                        <ul>
+                            <li>
+                                <button class="btn" id="slider-previous" title="image précédente">
+                                    <i class="fa-solid fa-backward-step"></i>
+                                </button>
+                            </li>
+                            <li>
+                                <button class="btn" id="slider-play" title="démarrer">
+                                    <i class="fa-solid fa-play"></i>
+                                </button>
+                            </li>
+                            <li>
+                                <button class="btn" id="slider-next" title="image suivante">
+                                    <i class="fa-solid fa-forward-step"></i>
+                                </button>
+                            </li>
+                            <li>
+                                <button class="btn" id="slider-random" title="image random">
+                                    <i class="fa-solid fa-shuffle"></i>
+                                </button>
+                            </li>
+                            <li>
+                                <button class="btn" id="slider-stop" title="image stop">
+                                    <i class="fa-solid fa-stop"></i>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>    
+            </div>
+        </section>
+
         <div class="card">
         
             <figure id="slider" class="slider">
-                <span></span>
+                <span class="slider__number"></span>
                 <img src="" alt="Photo du carrousel">
-                <figcaption></figcaption>
+                <figcaption class="slider__title"></figcaption>
             </figure>
         
         </div>

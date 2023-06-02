@@ -1,57 +1,83 @@
 'use strict';
 
-const KEY_BACKSPACE = 32;
-const KEY_LEFT = 37;
-const KEY_RIGHT = 39;
+const KEY = {
+    BACKSPACE: 32,
+    LEFT: 37,
+    RIGHT: 39
+}
 
 let state;
 let slides = [
     {
         image: './img/background1.jpg',
         legend: 'background1',
-        number: '1'
+        number: '01'
     },
     {
         image: './img/background2.jpg',
         legend: 'background2',
-        number: '2'
+        number: '02'
     },
     {
         image: './img/background3.jpg',
         legend: 'background3',
-        number: '3'
+        number: '03'
     },
     {
         image: './img/background4.jpg',
         legend: 'background4',
-        number: '4'
+        number: '04'
     },
     {
         image: './img/background5.jpg',
         legend: 'background5',
-        number: '5'
+        number: '05'
     },
     {
         image: './img/background6.jpg',
         legend: 'background6',
-        number: '6'
+        number: '06'
     },
     {
         image: './img/background7.jpg',
         legend: 'background7',
-        number: '7'
+        number: '07'
     },
     {
         image: './img/background8.jpg',
         legend: 'background8',
-        number: '8'
+        number: '08'
     },
     {
         image: './img/background9.jpg',
         legend: 'background9',
-        number: '9'
+        number: '09'
     }
 ];
+
+let frames = [
+    {
+        transform: 'scale(.2)',
+        opacity: 0
+    },
+    {
+        opacity: 0.5
+    },
+    {
+        transform: 'scale(1)',
+        opacity: 1
+    }
+];
+
+let target = document.querySelector('#slider img');
+
+function animateSlide() {
+    target.animate(frames, {
+        duration: 1000,
+        fill: 'backwards',
+        easing: 'ease-in-out'
+    });
+}
 
 function updateSlider() {
     let sliderNumber, sliderImage, sliderLegend;
@@ -63,6 +89,7 @@ function updateSlider() {
     sliderNumber.textContent = slides[state.index].number;
     sliderImage.src = slides[state.index].image;
     sliderLegend.textContent = slides[state.index].legend;
+    animateSlide()
 }
 
 function toggleToolBox() {
@@ -70,16 +97,16 @@ function toggleToolBox() {
     icon.classList.toggle('fa-arrow-right');
     icon.classList.toggle('fa-arrow-down');
 
-    document.querySelector('.toolbox div').classList.toggle('openbox');
+    document.querySelector('.toolbox__navbar #toolbox__navbar__buttons').classList.toggle('openbox');
 }
 
 function sliderPrevious() {
     state.index--;
-
+    
     if (state.index < 0) {
         state.index = slides.length - 1;
     }
-
+    
     updateSlider();
 }
 
@@ -136,15 +163,15 @@ function sliderRandom() {
 
 function sliderKeyUp(event) {
     switch (event.keyCode) {
-        case KEY_RIGHT:
+        case KEY.RIGHT:
             sliderNext();
             break;
 
-        case KEY_LEFT:
+        case KEY.LEFT:
             sliderPrevious();
             break;
 
-        case KEY_BACKSPACE:
+        case KEY.BACKSPACE:
             sliderPlay();
             break;
     }

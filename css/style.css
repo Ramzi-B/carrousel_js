@@ -34,29 +34,26 @@ header h1 {
 }
 
 .toolbox-wrapper,
-.toolbox-navbar {
+.toolbox-trigger,
+.toolbox {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 2em;
 }
-.toolbox {
+.toolbox__navbar {
     position: relative;
 }
-.toolbox ul {
+.toolbox__navbar ul {
     display: flex;
     align-items: center;
     list-style: none;
     padding: 0;
 }
-.toolbox ul li + li {
+.toolbox__navbar ul li + li {
     margin-left: 1.5em;
 }
-.toolbox #box {
-    border: 1px solid rgba(255,255,255, .3);
-    padding: 1em;
-}
-.toolbox #box {
+.toolbox__navbar #toolbox__navbar__buttons {
   -webkit-transform: scale(0.5);
   -ms-transform: scale(0);
   transform: scale(0.5);
@@ -65,7 +62,7 @@ header h1 {
   -ms-transition: all .3s;
   transition: all .3s;
 }
-.toolbox #box.openbox {
+.toolbox__navbar #toolbox__navbar__buttons.openbox {
   -webkit-transform: scale(1);
   -ms-transform: scale(1);
   transform: scale(1);
@@ -89,9 +86,9 @@ a.btn {
     overflow: hidden;
     background: transparent;
     color: #FFF;
-    -moz-border-radius: 0.4rem;
-    -webkit-border-radius: 0.4rem;
-    border-radius: 0.4rem;
+    -moz-border-radius: 45% 5% / 25% 50%;
+    -webkit-border-radius: 45% 5% / 25% 50%;
+    border-radius: 45% 5% / 25% 50%;
     -moz-transition: all 0.3s ease-in-out;
     -o-transition: all 0.3s ease-in-out;
     -webkit-transition: all 0.3s ease-in-out;
@@ -141,3 +138,30 @@ a.btn {
 .btn:hover:after {
     right: 50%;
 } */
+
+.card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.slider span {
+    position: relative;
+    display: block;
+    padding: .5em;
+    margin-bottom: 0.2em;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    text-align: center;
+    background: #242038;
+    border: 2px solid #FFF;
+}
+.slider img {
+    position: relative;
+    border: 5px solid #FFF;
+    border-radius: 0.4rem;
+}
+.slider figcaption {
+    position: relative;
+    text-align: right;
+}
