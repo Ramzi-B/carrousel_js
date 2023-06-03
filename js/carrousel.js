@@ -82,9 +82,9 @@ function animateSlide() {
 function updateSlider() {
     let sliderNumber, sliderImage, sliderLegend;
 
-    sliderNumber = document.querySelector('#slider span');
-    sliderImage = document.querySelector('#slider img');
-    sliderLegend = document.querySelector('#slider figcaption');
+    sliderNumber = document.querySelector('#slider .slider__number');
+    sliderImage = document.querySelector('#slider .slider__image');
+    sliderLegend = document.querySelector('#slider .slider__legend');
 
     sliderNumber.textContent = slides[state.index].number;
     sliderImage.src = slides[state.index].image;

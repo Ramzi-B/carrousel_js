@@ -55,7 +55,7 @@ header h1 {
 }
 .toolbox__navbar #toolbox__navbar__buttons {
   -webkit-transform: scale(0.5);
-  -ms-transform: scale(0);
+  -ms-transform: scale(0.5);
   transform: scale(0.5);
   opacity: 0;
   -webkit-transition: all .3s;
@@ -144,7 +144,7 @@ a.btn {
     align-items: center;
     justify-content: center;
 }
-.slider span {
+.slider .slider__number {
     position: relative;
     display: block;
     padding: .5em;
@@ -156,12 +156,14 @@ a.btn {
     background: #242038;
     border: 2px solid #FFF;
 }
-.slider img {
+.slider .slider__image {
     position: relative;
     border: 5px solid #FFF;
+    -moz-border-radius: 0.4rem;
+    -webkit-border-radius: 0.4rem;
     border-radius: 0.4rem;
 }
-.slider figcaption {
+.slider .slider__legend {
     position: relative;
     text-align: right;
 }
